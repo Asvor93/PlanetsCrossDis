@@ -3,21 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29215.179
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlanetsCrossDis", "PlanetsCrossDis\PlanetsCrossDis.csproj", "{94B58FAA-5EF6-45DC-94DB-FB407AC99418}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Planets.Core", "Planets.Core\Planets.Core.csproj", "{8AFE39A0-AF8F-4C3F-A397-FEC46793321E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planets.Core", "Planets.Core\Planets.Core.csproj", "{8AFE39A0-AF8F-4C3F-A397-FEC46793321E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planets.Core.Entity", "Planets.Core.Entity\Planets.Core.Entity.csproj", "{A5EC0AEF-4488-4FAA-9EA3-6A099050F158}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Planets.Core.Entity", "Planets.Core.Entity\Planets.Core.Entity.csproj", "{A5EC0AEF-4488-4FAA-9EA3-6A099050F158}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{4443376C-D21A-4D1B-A5F4-DCEE89043114}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{59F932D0-4CA9-4062-85BE-0D78F9F5E293}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planets.Infrastructure.SQL", "Planets.Infractructure.SQL\Planets.Infrastructure.SQL.csproj", "{2BDB5D69-F099-474B-BD31-6FC9916CCEBA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Planets.Infrastructure.SQL", "Planets.Infractructure.SQL\Planets.Infrastructure.SQL.csproj", "{2BDB5D69-F099-474B-BD31-6FC9916CCEBA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{528CB7FE-FB31-4AF1-AEFC-BE26F0B0FA9F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planets.Cross.RestApi", "Planets.Cross.RestApi\Planets.Cross.RestApi.csproj", "{F1B47776-82CD-4179-837E-72FDC0F6527B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Planets.Cross.RestApi", "Planets.Cross.RestApi\Planets.Cross.RestApi.csproj", "{F1B47776-82CD-4179-837E-72FDC0F6527B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,10 +23,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{94B58FAA-5EF6-45DC-94DB-FB407AC99418}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{94B58FAA-5EF6-45DC-94DB-FB407AC99418}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{94B58FAA-5EF6-45DC-94DB-FB407AC99418}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{94B58FAA-5EF6-45DC-94DB-FB407AC99418}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8AFE39A0-AF8F-4C3F-A397-FEC46793321E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8AFE39A0-AF8F-4C3F-A397-FEC46793321E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8AFE39A0-AF8F-4C3F-A397-FEC46793321E}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Planets.Core.Entity\Planets.Core.Entity.csproj" />
+    <ProjectReference Include="..\Planets.Core\Planets.Core.csproj" />
+    <ProjectReference Include="..\Planets.Infractructure.SQL\Planets.Infrastructure.SQL.csproj" />
+  </ItemGroup>
+
+</Project>

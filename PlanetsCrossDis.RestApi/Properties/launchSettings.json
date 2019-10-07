@@ -4,8 +4,8 @@
     "windowsAuthentication": false, 
     "anonymousAuthentication": true, 
     "iisExpress": {
-      "applicationUrl": "http://localhost:63109",
-      "sslPort": 44354
+      "applicationUrl": "http://localhost:63193",
+      "sslPort": 44388
     }
   },
   "profiles": {
@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Planets.Cross.RestApi": {
+    "PlanetsCrossDis.RestApi": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "api/values",

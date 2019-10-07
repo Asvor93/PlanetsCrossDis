@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace Planets.Cross.RestApi
+namespace PlanetsCrossDis.RestApi
 {
     public class Program
     {

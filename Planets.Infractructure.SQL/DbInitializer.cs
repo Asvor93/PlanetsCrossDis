@@ -9,7 +9,7 @@ namespace Planets.Infrastructure.SQL
             context.Database.EnsureDeleted();
             context.Database.EnsureCreated();
 
-            var moon1 = context.Moons.Add(new Moon()
+            var moon1 = context.Universe.Add(new Moon()
             {
                 PlanetName = "Europa",
                 Price = 100,
@@ -19,7 +19,7 @@ namespace Planets.Infrastructure.SQL
                 Size = "2x smaller than Earth"
             });
 
-            var moon2 = context.Moons.Add(new Moon()
+            var moon2 = context.Universe.Add(new Moon()
             {
                 PlanetName = "MN43yQ",
                 Price = 150,
@@ -28,7 +28,7 @@ namespace Planets.Infrastructure.SQL
                 Population = 2,
                 Size = "3x bigger than Earth"
             });
-            var moon3 = context.Moons.Add(new Moon()
+            var moon3 = context.Universe.Add(new Moon()
             {
                 PlanetName = "OP12yQ",
                 Price = 100,

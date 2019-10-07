@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using Planets.Core.DomainService;
 using Planets.Core.Entity;
 
@@ -7,31 +8,37 @@ namespace Planets.Infrastructure.SQL.Repositories
 {
     public class PlanetRepository: IPlanetRepository
     {
-        readonly IPlanetRepository _planetRepository;
+        readonly PlanetsCrossDisContext _context;
 
-        public PlanetRepository(IPlanetRepository planetRepository)
+        public PlanetRepository(PlanetsCrossDisContext context)
         {
-            _planetRepository = planetRepository;
+            _context = context;
         }
 
         public Planet CreatePlanet(Planet planet)
         {
-            return _planetRepository.CreatePlanet(planet);
+            _context.Attach(planet).State = EntityState.Added;
+            _context.SaveChanges();
+            return planet;
         }
 
         public IEnumerable<Planet> ReadPlanets()
         {
-            return _planetRepository.ReadPlanets().ToList();
+            return _context.Planets;
         }
 
         public Planet UpdatePlanet(Planet planet)
         {
-            return _planetRepository.UpdatePlanet(planet);
+            _context.Attach(planet).State = EntityState.Modified;
+            _context.SaveChanges();
+            return planet;
         }
 
         public Planet DeletePlanet(int id)
         {
-            return _planetRepository.DeletePlanet(id);
+            var planetToRemove = _context.Remove(new Planet{Id = id}).Entity;
+            _context.SaveChanges();
+            return planetToRemove;
         }
     }
 }

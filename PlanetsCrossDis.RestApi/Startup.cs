@@ -38,9 +38,12 @@ namespace PlanetsCrossDis.RestApi
             services.AddScoped<IUniverseRepository, UniverseRepository>();
 
             services.AddScoped<IUniverse, UniverseService>();
+            services.AddCors();
+
             if (Environment.IsDevelopment())
             {
-                services.AddDbContext<PlanetsCrossDisContext>(opt => opt.UseSqlite("Data Source = Planets.db"));
+                services.AddDbContext<PlanetsCrossDisContext>(opt 
+                    => opt.UseSqlite("Data Source = Planets.db"));
             }
             else
             {
@@ -78,7 +81,7 @@ namespace PlanetsCrossDis.RestApi
 
                 app.UseHsts();
             }
-
+            app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
             app.UseMvc();
         }
     }

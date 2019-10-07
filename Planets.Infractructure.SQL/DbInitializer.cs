@@ -103,6 +103,8 @@ namespace Planets.Infrastructure.SQL
                 Population = 50000,
                 PlanetType = Universe.PlanetTypes.Star
             });
+
+            context.SaveChanges();
         }
     }
 }

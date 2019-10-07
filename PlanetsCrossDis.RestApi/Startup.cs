@@ -38,7 +38,6 @@ namespace PlanetsCrossDis.RestApi
             services.AddScoped<IUniverseRepository, UniverseRepository>();
 
             services.AddScoped<IUniverse, UniverseService>();
-            services.AddCors();
 
             if (Environment.IsDevelopment())
             {
@@ -81,7 +80,7 @@ namespace PlanetsCrossDis.RestApi
 
                 app.UseHsts();
             }
-            app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+
             app.UseMvc();
         }
     }

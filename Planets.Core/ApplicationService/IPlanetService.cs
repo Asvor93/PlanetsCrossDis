@@ -7,7 +7,7 @@ namespace Planets.Core.ApplicationService
     {
         List<Planet> GetPlanets();
         Planet AddPlanet(Planet planetToAdd);
-        Planet DelePlanet(Planet planetToDelete);
+        Planet DeletePlanet(Planet planetToDelete);
         Planet UpdatePlanet(Planet planetToUpdate);
     }
 }

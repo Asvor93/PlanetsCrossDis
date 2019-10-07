@@ -24,7 +24,15 @@ namespace PlanetsCrossDis.RestApi.Controllers
         [HttpGet]
         public ActionResult<Planet> Get()
         {
-            return Ok(_planetService.GetPlanets());
+            try
+            {
+                return Ok(_planetService.GetPlanets());
+            }
+            catch (Exception e)
+            {
+                throw new InvalidOperationException();
+            }
+            
         }
     }
 }

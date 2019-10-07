@@ -23,7 +23,7 @@ namespace Planets.Core.ApplicationService.Services
             return _planetRepository.CreatePlanet(planetToAdd);
         }
 
-        public Planet DelePlanet(Planet planetToDelete)
+        public Planet DeletePlanet(Planet planetToDelete)
         {
             return _planetRepository.DeletePlanet(planetToDelete.Id);
         }

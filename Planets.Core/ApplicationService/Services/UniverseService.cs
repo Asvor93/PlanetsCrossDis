@@ -5,30 +5,30 @@ using Planets.Core.Entity;
 
 namespace Planets.Core.ApplicationService.Services
 {
-    public class PlanetService: IPlanetService
+    public class UniverseService : IUniverse
     {
-        private readonly IPlanetRepository _planetRepository;
+        private readonly IUniverseRepository _planetRepository;
 
-        public PlanetService(IPlanetRepository planetRepository)
+        public UniverseService(IUniverseRepository planetRepository)
         {
             _planetRepository = planetRepository;
         }
-        public List<Planet> GetPlanets()
+        public List<Universe> GetPlanets()
         {
             return _planetRepository.ReadPlanets().ToList();
         }
 
-        public Planet AddPlanet(Planet planetToAdd)
+        public Universe AddPlanet(Universe planetToAdd)
         {
             return _planetRepository.CreatePlanet(planetToAdd);
         }
 
-        public Planet DeletePlanet(Planet planetToDelete)
+        public Universe DeletePlanet(Universe planetToDelete)
         {
             return _planetRepository.DeletePlanet(planetToDelete.Id);
         }
 
-        public Planet UpdatePlanet(Planet planetToUpdate)
+        public Universe UpdatePlanet(Universe planetToUpdate)
         {
             return _planetRepository.UpdatePlanet(planetToUpdate);
         }

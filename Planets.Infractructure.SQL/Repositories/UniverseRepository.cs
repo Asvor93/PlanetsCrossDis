@@ -6,37 +6,37 @@ using Planets.Core.Entity;
 
 namespace Planets.Infrastructure.SQL.Repositories
 {
-    public class PlanetRepository: IPlanetRepository
+    public class UniverseRepository: IUniverseRepository
     {
         readonly PlanetsCrossDisContext _context;
 
-        public PlanetRepository(PlanetsCrossDisContext context)
+        public UniverseRepository(PlanetsCrossDisContext context)
         {
             _context = context;
         }
 
-        public Planet CreatePlanet(Planet planet)
+        public Universe CreatePlanet(Universe planet)
         {
             _context.Attach(planet).State = EntityState.Added;
             _context.SaveChanges();
             return planet;
         }
 
-        public IEnumerable<Planet> ReadPlanets()
+        public IEnumerable<Universe> ReadPlanets()
         {
             return _context.Planets;
         }
 
-        public Planet UpdatePlanet(Planet planet)
+        public Universe UpdatePlanet(Universe planet)
         {
             _context.Attach(planet).State = EntityState.Modified;
             _context.SaveChanges();
             return planet;
         }
 
-        public Planet DeletePlanet(int id)
+        public Universe DeletePlanet(int id)
         {
-            var planetToRemove = _context.Remove(new Planet{Id = id}).Entity;
+            var planetToRemove = _context.Remove(new Universe { Id = id}).Entity;
             _context.SaveChanges();
             return planetToRemove;
         }

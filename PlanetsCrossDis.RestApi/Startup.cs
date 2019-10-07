@@ -35,9 +35,9 @@ namespace PlanetsCrossDis.RestApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            services.AddScoped<IPlanetRepository, PlanetRepository>();
+            services.AddScoped<IUniverseRepository, UniverseRepository>();
 
-            services.AddScoped<IPlanetService, PlanetService>();
+            services.AddScoped<IUniverse, UniverseService>();
             if (Environment.IsDevelopment())
             {
                 services.AddDbContext<PlanetsCrossDisContext>(opt => opt.UseSqlite("Data Source = Planets.db"));

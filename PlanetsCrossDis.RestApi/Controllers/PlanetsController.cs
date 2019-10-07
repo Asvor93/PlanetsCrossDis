@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Planets.Core.ApplicationService;
 using Planets.Core.Entity;
@@ -13,16 +9,16 @@ namespace PlanetsCrossDis.RestApi.Controllers
     [ApiController]
     public class PlanetsController : ControllerBase
     {
-        private readonly IPlanetService _planetService;
+        private readonly IUniverse _planetService;
 
-        public PlanetsController(IPlanetService planetService)
+        public PlanetsController(IUniverse uniService)
         {
-            _planetService = planetService;
+            _planetService = uniService;
         }
 
         //Get api/planets
         [HttpGet]
-        public ActionResult<Planet> Get()
+        public ActionResult<Universe> Get()
         {
             try
             {

@@ -15,8 +15,7 @@ namespace Planets.Infrastructure.SQL
 
         }
 
-        public DbSet<Planet> Planets { get; set; }
-        public DbSet<Moon> Universe { get; set; }
-        public DbSet<Star> Stars { get; set; }
+        public DbSet<Universe> Planets { get; set; }
+
     }
 }

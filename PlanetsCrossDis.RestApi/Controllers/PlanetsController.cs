@@ -13,7 +13,7 @@ namespace PlanetsCrossDis.RestApi.Controllers
     [ApiController]
     public class PlanetsController : ControllerBase
     {
-        private IPlanetService _planetService;
+        private readonly IPlanetService _planetService;
 
         public PlanetsController(IPlanetService planetService)
         {

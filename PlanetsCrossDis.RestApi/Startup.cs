@@ -6,10 +6,12 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Newtonsoft.Json;
 using Planets.Core.ApplicationService;
 using Planets.Core.ApplicationService.Services;
 using Planets.Core.DomainService;
@@ -36,6 +38,21 @@ namespace PlanetsCrossDis.RestApi
             services.AddScoped<IPlanetRepository, PlanetRepository>();
 
             services.AddScoped<IPlanetService, PlanetService>();
+            if (Environment.IsDevelopment())
+            {
+                services.AddDbContext<PlanetsCrossDisContext>(opt => opt.UseSqlite("Data Source = Planets.db"));
+            }
+            else
+            {
+                services.AddDbContext<PlanetsCrossDisContext>(opt =>
+                    opt.UseSqlServer(Configuration.GetConnectionString("defaultConnection")));
+            }
+
+            services.AddMvc().AddJsonOptions(opt =>
+            {
+                opt.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+                opt.SerializerSettings.MaxDepth = 3;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,19 +61,24 @@ namespace PlanetsCrossDis.RestApi
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+
                 using (var scope = app.ApplicationServices.CreateScope())
                 {
                     var context = scope.ServiceProvider.GetService<PlanetsCrossDisContext>();
-                    DbInitializer
+                    DbInitializer.SeedDb(context);
                 }
             }
             else
             {
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+                using (var scope = app.ApplicationServices.CreateScope())
+                {
+                    var context = scope.ServiceProvider.GetService<PlanetsCrossDisContext>();
+                    DbInitializer.SeedDb(context);
+                }
+
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
             app.UseMvc();
         }
     }

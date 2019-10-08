@@ -75,7 +75,9 @@ namespace PlanetsCrossDis.RestApi
                 using (var scope = app.ApplicationServices.CreateScope())
                 {
                     var context = scope.ServiceProvider.GetService<PlanetsCrossDisContext>();
-                    DbInitializer.SeedDb(context);
+                    //DbInitializer.SeedDb(context);
+                    context.Database.EnsureCreated();
+
                 }
 
                 app.UseHsts();

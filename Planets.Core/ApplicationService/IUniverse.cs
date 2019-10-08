@@ -9,5 +9,6 @@ namespace Planets.Core.ApplicationService
         Universe AddPlanet(Universe planetToAdd);
         Universe DeletePlanet(Universe planetToDelete);
         Universe UpdatePlanet(Universe planetToUpdate);
+        List<Universe> GetFilteredPlanets(Filter filter);
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Planets.Core.ApplicationService;
 using Planets.Core.Entity;
@@ -18,11 +19,11 @@ namespace PlanetsCrossDis.RestApi.Controllers
 
         //Get api/planets
         [HttpGet]
-        public ActionResult<Universe> Get()
+        public ActionResult<IEnumerable<Universe>> Get([FromQuery] Filter filter)
         {
             try
             {
-                return Ok(_planetService.GetPlanets());
+                return Ok(_planetService.GetFilteredPlanets(filter));
             }
             catch (Exception e)
             {
@@ -36,7 +37,7 @@ namespace PlanetsCrossDis.RestApi.Controllers
         {
             try
             {
-                return Ok(_planetService.GetPlanets());
+                return Ok(_planetService.GetPlanetById(id));
             }
             catch (Exception e)
             {

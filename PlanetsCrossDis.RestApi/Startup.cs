@@ -36,6 +36,7 @@ namespace PlanetsCrossDis.RestApi
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddScoped<IUniverseRepository, UniverseRepository>();
+            services.AddCors();
 
             services.AddScoped<IUniverse, UniverseService>();
 
@@ -83,6 +84,7 @@ namespace PlanetsCrossDis.RestApi
                 app.UseHsts();
             }
 
+            app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
             app.UseMvc();
         }
     }

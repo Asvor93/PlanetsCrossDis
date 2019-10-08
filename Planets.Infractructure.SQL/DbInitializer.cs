@@ -6,8 +6,7 @@ namespace Planets.Infrastructure.SQL
     {
         public static void SeedDb(PlanetsCrossDisContext context)
         {
-            context.Database.EnsureDeleted();
-            context.Database.EnsureCreated();
+            
 
             var moon1 = context.Planets.Add(new Universe()
             {

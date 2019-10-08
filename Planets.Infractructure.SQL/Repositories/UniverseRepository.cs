@@ -22,6 +22,21 @@ namespace Planets.Infrastructure.SQL.Repositories
             return planet;
         }
 
+        public int Count()
+        {
+            return _context.Planets.Count();
+        }
+
+        public IEnumerable<Universe> ReadPlanets(Filter filter)
+        {
+            if (filter.CurrentPage > 0 && filter.ItemsPrPage > 0)
+            {
+                return _context.Planets.Skip((filter.CurrentPage - 1)
+                                            * filter.ItemsPrPage).Take(filter.ItemsPrPage).OrderBy(p => p.PlanetName);
+            }
+            return _context.Planets;
+        }
+
         public IEnumerable<Universe> ReadPlanets()
         {
             return _context.Planets;

@@ -23,7 +23,12 @@ namespace PlanetsCrossDis.RestApi.Controllers
         {
             try
             {
+                if (filter != null && filter.CurrentPage == 0 && filter.ItemsPrPage == 0)
+                {
+                    return Ok(_planetService.GetPlanets());
+                }
                 return Ok(_planetService.GetFilteredPlanets(filter));
+                
             }
             catch (Exception e)
             {

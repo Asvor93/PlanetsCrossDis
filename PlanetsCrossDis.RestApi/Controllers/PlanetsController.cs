@@ -23,7 +23,7 @@ namespace PlanetsCrossDis.RestApi.Controllers
         {
             try
             {
-                if (filter != null && filter.CurrentPage == 0 && filter.ItemsPrPage == 0)
+                if (filter.CurrentPage == 0 && filter.ItemsPrPage == 0)
                 {
                     return Ok(_planetService.GetPlanets());
                 }
@@ -79,8 +79,8 @@ namespace PlanetsCrossDis.RestApi.Controllers
         }
 
         // DELETE api/planets/5
-        [HttpDelete]
-        public ActionResult<Universe> Delete([FromQuery] int id)
+        [HttpDelete("{id}")]
+        public ActionResult<Universe> Delete(int id)
         {
             try
             {

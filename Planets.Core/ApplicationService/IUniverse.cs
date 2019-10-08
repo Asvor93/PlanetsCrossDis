@@ -10,5 +10,6 @@ namespace Planets.Core.ApplicationService
         Universe DeletePlanet(Universe planetToDelete);
         Universe UpdatePlanet(Universe planetToUpdate);
         List<Universe> GetFilteredPlanets(Filter filter);
+        Universe GetPlanetById(int id);
     }
 }

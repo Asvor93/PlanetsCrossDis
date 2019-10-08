@@ -52,5 +52,10 @@ namespace Planets.Core.ApplicationService.Services
                 return _planetRepository.ReadPlanets().ToList();
             
         }
+
+        public Universe GetPlanetById(int id)
+        {
+            return _planetRepository.FindPlanetById(id);
+        }
     }
 }

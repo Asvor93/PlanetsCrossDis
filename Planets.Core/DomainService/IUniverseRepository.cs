@@ -9,6 +9,8 @@ namespace Planets.Core.DomainService
         IEnumerable<Universe> ReadPlanets(Filter filter = null);
         Universe UpdatePlanet(Universe universe);
         Universe DeletePlanet(int id);
+
+        Universe FindPlanetById(int id);
         int Count();
     }
 }

@@ -65,7 +65,7 @@ namespace PlanetsCrossDis.RestApi.Controllers
         {
             try
             {
-                return Ok(_planetService.UpdatePlanet(universeToUpdate);
+                return Ok(_planetService.UpdatePlanet(universeToUpdate));
             }
             catch (Exception e)
             {

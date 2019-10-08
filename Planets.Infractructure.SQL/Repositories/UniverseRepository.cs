@@ -22,6 +22,11 @@ namespace Planets.Infrastructure.SQL.Repositories
             return planet;
         }
 
+        public Universe FindPlanetById(int id)
+        {
+            return _context.Planets.FirstOrDefault(p => p.Id == id);
+        }
+
         public int Count()
         {
             return _context.Planets.Count();

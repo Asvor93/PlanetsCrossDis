@@ -38,9 +38,7 @@ namespace PlanetsCrossDis.RestApi
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services.AddScoped<IUniverseRepository, UniverseRepository>();
-            services.AddScoped<IOrderRepository, OrderRepository>();
 
-            services.AddScoped<IOrderService, OrderService>();
             services.AddScoped<IUniverse, UniverseService>();
 
             services.AddCors();

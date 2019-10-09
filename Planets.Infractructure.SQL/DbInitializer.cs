@@ -104,30 +104,6 @@ namespace Planets.Infrastructure.SQL
                 PlanetType = Universe.PlanetTypes.Star
             });
 
-            var customer1 = context.Customers.Add(new Customer()
-            {
-                FirstName = "Johnny",
-                LastName = "Bravo",
-                UserName = "Brugernavn",
-                Password = "Kodeord"
-            }).Entity;
-            var customer2 = context.Customers.Add(new Customer()
-            {
-                FirstName = "Ed",
-                LastName = "Edd&Eddy",
-                UserName = "Eddy",
-                Password = "Ed123"
-            }).Entity;
-
-            var order1 = context.Orders.Add(new Order()
-            {
-                Customer = customer1,
-                OrderDate = new DateTime(1999, 2,15),
-                DeliveryDate = new DateTime(2019, 5, 9)
-                
-
-            }); ;
-
             context.SaveChanges();
         }
     }

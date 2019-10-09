@@ -10,6 +10,6 @@ namespace Planets.Core.Entity
         public DateTime OrderDate { get; set; }
         public DateTime DeliveryDate { get; set; }
         public Customer Customer { get; set; }
-        public List<Order> Orders { get; set; }
+        public List<Universe> Orders { get; set; }
     }
 }

@@ -27,9 +27,9 @@ namespace Planets.Infrastructure.SQL.Repositories
             return _context.Orders.FirstOrDefault(o => o.Id == id);
         }
 
-        public IEnumerable<Order> ReadAllOrders()
+        public IEnumerable<Universe> ReadAllOrders()
         {
-            return _context.Orders;
+            return _context.Planets;
         }
 
         public Order UpdateOrder(Order orderToUpdate)

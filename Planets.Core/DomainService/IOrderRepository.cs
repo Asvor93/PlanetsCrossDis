@@ -7,7 +7,7 @@ namespace Planets.Core.DomainService
     {
         Order CreateOrder(Order orderToCreate);
         Order GetSingleOrder(int id);
-        IEnumerable<Order> ReadAllOrders();
+        IEnumerable<Universe> ReadAllOrders();
         Order UpdateOrder(Order orderToUpdate);
         Order DeleteOrder(int id);
 

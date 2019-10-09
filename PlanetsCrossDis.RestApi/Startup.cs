@@ -15,6 +15,7 @@ using Newtonsoft.Json;
 using Planets.Core.ApplicationService;
 using Planets.Core.ApplicationService.Services;
 using Planets.Core.DomainService;
+using Planets.Core.Entity;
 using Planets.Infrastructure.SQL;
 using Planets.Infrastructure.SQL.Repositories;
 
@@ -35,10 +36,14 @@ namespace PlanetsCrossDis.RestApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            services.AddScoped<IUniverseRepository, UniverseRepository>();
-            services.AddCors();
 
+            services.AddScoped<IUniverseRepository, UniverseRepository>();
+            services.AddScoped<IOrderRepository, OrderRepository>();
+
+            services.AddScoped<IOrderService, OrderService>();
             services.AddScoped<IUniverse, UniverseService>();
+
+            services.AddCors();
 
             if (Environment.IsDevelopment())
             {

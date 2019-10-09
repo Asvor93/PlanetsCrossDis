@@ -56,12 +56,13 @@ namespace PlanetsCrossDis.RestApi.Controllers
         {
             try
             {
-                return Ok(_planetService.AddPlanet(universeToAdd));
+               
             }
             catch (Exception e)
             {
-                throw new InvalidOperationException();
+                //return BadRequest(e.StackTrace);
             }
+            return Ok(_planetService.AddPlanet(universeToAdd));
         }
 
         // PUT api/planets/5

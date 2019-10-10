@@ -56,13 +56,13 @@ namespace PlanetsCrossDis.RestApi.Controllers
         {
             try
             {
-               
+                return Ok(_planetService.AddPlanet(universeToAdd));
             }
             catch (Exception e)
             {
-                //return BadRequest(e.StackTrace);
+                return BadRequest(e.StackTrace);
             }
-            return Ok(_planetService.AddPlanet(universeToAdd));
+            
         }
 
         // PUT api/planets/5
@@ -81,7 +81,7 @@ namespace PlanetsCrossDis.RestApi.Controllers
 
         // DELETE api/planets/5
         [HttpDelete("{id}")]
-        public ActionResult<Universe> Delete(int id)
+        public ActionResult<Universe> Delete([FromBody] int id)
         {
             try
             {

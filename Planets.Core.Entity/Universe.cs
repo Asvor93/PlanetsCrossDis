@@ -14,6 +14,7 @@ namespace Planets.Core.Entity
         public string Size { get; set; }
         public string MainResource { get; set; }
         public PlanetTypes PlanetType { get; set; }
+        public string image { get; set; }
         public enum PlanetTypes
         {
             Moon, Star, Planet

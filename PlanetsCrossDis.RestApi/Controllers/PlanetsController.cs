@@ -81,7 +81,7 @@ namespace PlanetsCrossDis.RestApi.Controllers
 
         // DELETE api/planets/5
         [HttpDelete("{id}")]
-        public ActionResult<Universe> Delete([FromBody] int id)
+        public ActionResult<Universe> Delete(int id)
         {
             try
             {
